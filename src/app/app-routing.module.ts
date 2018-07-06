@@ -7,6 +7,8 @@ import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 
 const appRoutes: Routes = [
@@ -15,10 +17,10 @@ const appRoutes: Routes = [
         {path: ':id', component: ShoppingEditComponent}
     ]},
     {path: 'recipes', component: RecipesComponent, children: [
-        {path: 'list', component: RecipesListComponent, children: [
-            {path: ':id', component: RecipesItemComponent}
-        ]},
-        {path: ':id/details', component: RecipesDetailComponent}
+        {path: '', component: RecipesStartComponent},
+        {path: 'new', component: RecipeEditComponent},
+        {path: ':id', component: RecipesDetailComponent},
+        {path: ':id/edit', component: RecipeEditComponent},
     ]}
 ];
 

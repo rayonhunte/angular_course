@@ -1,3 +1,4 @@
+<div *ngIf="recipe"> 
 <div class="row">
   <div class="col-xs-12">
     <img [src]="recipe.imagePath" 
@@ -34,9 +35,10 @@
 <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
-          {{ingredient.name}} - {{ingredient.amount}}
-        </li>
+          <li class="list-group-item" *ngFor="let ingredient of recipe.ingredients">
+            {{ingredient.name}} - {{ingredient.amount}}
+          </li>
       </ul>
     </div>
+</div>
 </div>

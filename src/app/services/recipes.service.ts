@@ -11,6 +11,7 @@ export class RecipesService {
 
   private recipes: Recipe[] = [
     new Recipe (
+    0,
     'Rots recipe',
     'this is a test',
     'https://s.tmimgcdn.com/blog/wp-content/uploads/2018/03/food-21.jpg?x54449',
@@ -20,6 +21,7 @@ export class RecipesService {
     ]
     ),
     new Recipe (
+      1,
       'Pork recipe',
       'this is a test2',
       'https://s.tmimgcdn.com/blog/wp-content/uploads/2018/03/food-21.jpg?x54449',
@@ -37,5 +39,9 @@ export class RecipesService {
     // return recipes array
     console.log(this.recipes);
     return this.recipes.slice();
+  }
+
+  getRecipeById(id: number) {
+    return this.recipes[id];
   }
 }
