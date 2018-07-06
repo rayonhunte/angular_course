@@ -10,7 +10,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 
 
 const appRoutes: Routes = [
-    {path: 'shoppingList', component: ShoppingListComponent, children: [
+    {path: '', redirectTo: '/recipes', pathMatch: 'full'},
+    {path: 'shopping-list', component: ShoppingListComponent, children: [
         {path: ':id', component: ShoppingEditComponent}
     ]},
     {path: 'recipes', component: RecipesComponent, children: [
@@ -18,8 +19,7 @@ const appRoutes: Routes = [
             {path: ':id', component: RecipesItemComponent}
         ]},
         {path: ':id/details', component: RecipesDetailComponent}
-    ]},
-    {path: '**', redirectTo: '/shoppingList', pathMatch: 'full'}
+    ]}
 ];
 
 
