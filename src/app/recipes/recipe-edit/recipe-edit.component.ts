@@ -38,6 +38,7 @@ export class RecipeEditComponent implements OnInit {
     if (this.editMode) {
       this.recipeService.updateRecipe(this.recipeId, newRecipe);
     } else {
+      
       this.recipeService.addRecipe(newRecipe);
     }
   }
@@ -53,8 +54,8 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onCancel() {
-  
   }
+
 
   private formInit() {
     let recipeName = '';
