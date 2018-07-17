@@ -23,6 +23,11 @@ export class RecipesDetailComponent implements OnInit {
     );
   }
 
+  deleteRecipe() {
+    this.recipesService.deleteRecipe(+this.recipe.id);
+    this.router.navigate(['recipes']);
+  }
+
   sendDetails() {
     this.recipesService.addIngredientsToShoppingList(this.recipe.ingredients);
   }
