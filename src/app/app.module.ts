@@ -27,7 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/fo
     ShoppingEditComponent,
     DropdownDirective,
     RecipesStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,

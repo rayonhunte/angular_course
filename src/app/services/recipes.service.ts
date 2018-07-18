@@ -43,7 +43,7 @@ export class RecipesService {
   }
 
   getRecipeById(id: number) {
-    return this.recipes[id];
+    return this.recipes.find(x => x.id === +id);
   }
 
   addRecipe(recipe: Recipe) {
@@ -51,11 +51,17 @@ export class RecipesService {
     this.recipesChanged.next(this.recipes.slice());
   }
 
-  updateRecipe(index: number, newRecipe: Recipe) {
+  updateRecipe(id: number, newRecipe: Recipe) {
+    const index = this.recipes.findIndex(x => x.id === +id);
     this.recipes[index] = newRecipe;
     this.recipesChanged.next(this.recipes.slice());
   }
 
+ deleteRecipe(id: number) {
+   const recipeObj = this.recipes.find(x => x.id === +id);
+   this.recipes = this.recipes.filter(obj => obj !== recipeObj);
+   this.recipesChanged.next(this.recipes.slice());
+ }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
