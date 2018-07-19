@@ -9,6 +9,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { SingupComponent } from './singup/singup.component';
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
         {path: 'new', component: RecipeEditComponent},
         {path: ':id', component: RecipesDetailComponent},
         {path: ':id/edit', component: RecipeEditComponent},
-    ]}
+    ]},
+    {path: 'signup', component: SingupComponent},
 ];
 
 

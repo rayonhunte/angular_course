@@ -18,11 +18,11 @@
                 <li routerLinkActive="active">
                     <a routerLink="shopping-list">Shopping List</a>
                 </li>
-                <li>
-                    <a href="#"></a>
-                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a routerLink="/signup">SingUp</a>
+                </li>
                 <li class="dropdown" appDropdown>
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                         Manage
@@ -30,10 +30,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a router (click)="OnSaveData()">Save Data</a>
+                            <a (click)="OnSaveData()">Save Data</a>
                         </li>
                         <li>
-                            <a href="#">Fetch Data</a>
+                            <a (click)="onDataFetch()">Fetch Data</a>
                         </li>
                     </ul>
                 </li>

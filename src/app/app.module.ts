@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import { SingupComponent } from './singup/singup.component';
+import { SinginComponent } from './singin/singin.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/fo
     DropdownDirective,
     RecipesStartComponent,
     RecipeEditComponent,
+    SingupComponent,
+    SinginComponent,
   ],
   imports: [
     BrowserModule,

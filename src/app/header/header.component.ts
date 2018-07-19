@@ -19,7 +19,11 @@ OnSaveData() {
     this.recipeService.saveRecipes().subscribe(
         (data) => console.log(data),
         (error) => console.log(error)
-    )
+    );
+}
+
+onDataFetch() {
+    this.recipeService.getRecipes();
 }
 
 }
