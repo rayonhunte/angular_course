@@ -27,5 +27,9 @@ onDataFetch() {
     this.recipeService.getRecipes();
 }
 
+onLogOut() {
+    this.authService.logOut();
+}
+
 }
 

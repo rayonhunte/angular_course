@@ -29,6 +29,9 @@
                     </li>
                 </ng-template>
                 <ng-template [ngIf]="authService.isAuth()">
+                    <li>
+                        <a (click)="onLogOut()">Logout</a>
+                    </li>
                     <li class="dropdown" appDropdown>
                         <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                             Manage

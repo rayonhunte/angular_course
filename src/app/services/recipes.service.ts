@@ -71,11 +71,12 @@ export class RecipesService {
 
   saveRecipes() {
     const token = this.authService.getToken();
+    console.log(token);
     return this.http.put('https://udemy-temp.firebaseio.com/recipeData.json?auth=' + token, this.recipes);
   }
 
   getRecipes() {
-    const token = this.authService.getToken();
+    const token = this.authService.token;
     console.log(token);
     this.http.get('https://udemy-temp.firebaseio.com/recipeData.json?auth=' + token).pipe(map(
       (res: Response) => {
