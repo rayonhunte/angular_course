@@ -10,6 +10,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { SingupComponent } from './singup/singup.component';
+import { SinginComponent } from './singin/singin.component';
 
 
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
         {path: ':id/edit', component: RecipeEditComponent},
     ]},
     {path: 'signup', component: SingupComponent},
+    {path: 'login', component: SinginComponent},
 ];
 
 

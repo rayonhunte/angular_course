@@ -20,23 +20,31 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a routerLink="/signup">SingUp</a>
-                </li>
-                <li class="dropdown" appDropdown>
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-                        Manage
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a (click)="OnSaveData()">Save Data</a>
-                        </li>
-                        <li>
-                            <a (click)="onDataFetch()">Fetch Data</a>
-                        </li>
-                    </ul>
-                </li>
+                <ng-template [ngIf]="!authService.isAuth()">
+                    <li>
+                        <a routerLink="/signup">SingUp</a>
+                    </li>
+                    <li>
+                        <a routerLink="/login">Login</a>
+                    </li>
+                </ng-template>
+                <ng-template [ngIf]="authService.isAuth()">
+                    <li class="dropdown" appDropdown>
+                        <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            Manage
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a (click)="OnSaveData()">Save Data</a>
+                            </li>
+                            <li>
+                                <a (click)="onDataFetch()">Fetch Data</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ng-template>  
+                
             </ul>
         </div>
     </div>

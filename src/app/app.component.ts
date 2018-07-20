@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
       {
         apiKey: "AIzaSyBLDUlHhDNKGvL0UWsoH8QONKa7w675xPo",
         authDomain: "udemy-temp.firebaseapp.com",
-      }
-    );
+      });
+      //const currentUser = JSON.parse(localStorage.getItem())
   }
 }

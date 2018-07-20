@@ -5,6 +5,7 @@ import { ShoppingListService } from './shopping-list.service';
 import { Subject } from 'rxjs';
 import { Http, Response } from '@angular/http';
 import { map, catchError} from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,7 @@ export class RecipesService {
     )
   ];
 
-  constructor(private slService: ShoppingListService, private http: Http) { }
+  constructor(private slService: ShoppingListService, private http: Http, private authService: AuthService) { }
 
   // getRecipes() {
   //   // return recipes array
@@ -69,11 +70,14 @@ export class RecipesService {
   }
 
   saveRecipes() {
-    return this.http.put('https://udemy-temp.firebaseio.com/recipeData.json', this.recipes);
+    const token = this.authService.getToken();
+    return this.http.put('https://udemy-temp.firebaseio.com/recipeData.json?auth=' + token, this.recipes);
   }
 
   getRecipes() {
-    this.http.get('https://udemy-temp.firebaseio.com/recipeData.json').pipe(map(
+    const token = this.authService.getToken();
+    console.log(token);
+    this.http.get('https://udemy-temp.firebaseio.com/recipeData.json?auth=' + token).pipe(map(
       (res: Response) => {
         const recipes: Recipe[] = res.json();
         for (const recipe of recipes) {

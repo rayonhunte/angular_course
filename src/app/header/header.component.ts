@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import { RecipesService } from '../services/recipes.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { RecipesService } from '../services/recipes.service';
 export class HeaderComponent {
 @Output() featureSelected = new EventEmitter<string>();
 
-constructor(private recipeService: RecipesService) {}
+constructor(private recipeService: RecipesService, private authService: AuthService) {}
 
 OnSelect(feature: string) {
     this.featureSelected.emit(feature);
